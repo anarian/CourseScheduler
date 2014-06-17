@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourseSchedulerClass
+namespace CourseScheduler
 {
 	class Class
 	{
 		internal string className;
-		internal int startTime;
-		internal int endTime;
+		internal float startTime;
+		internal float endTime;
 		internal int duration;
 		internal int classSection;
 		internal string location;
@@ -26,12 +26,12 @@ namespace CourseSchedulerClass
 			className = _className;
 			classSection = _classSection;
 		}
-		public Class(string _className, int _startTime, int _endTime, string _location, int _classSection, string _day)
+		public Class(string _className, float _startTime, float _endTime, string _location, int _classSection, string _day)
 		{
 			className = _className;
 			startTime = _startTime;
 			endTime = _endTime;
-			duration = _endTime - _startTime;
+			duration = (int)_endTime - (int)_startTime;
 			location = _location;
 			classSection = _classSection;
 			day = _day;
@@ -70,7 +70,7 @@ namespace CourseSchedulerClass
 		}
 
 		public Course(string _courseName, int _sessionsPerWeek, string[] _sessionDays, int _courseSection,
-			int[] _startTime, int[] _endTime, string[] _location, string _classType)
+			float[] _startTime, float[] _endTime, string[] _location, string _classType)
 		{
 			courseName = _courseName;
 			courseSection = _courseSection;
